@@ -40,13 +40,38 @@
     //MPVolumeView *volumeView = [[MPVolumeView alloc]initWithFrame:self.boundsViewVolume.bounds];
     //[self.boundsViewVolume addSubview:volumeView];
     [[AVAudioSession sharedInstance] setActive:YES error:NULL];
-    //0.00000003283 is lowest so far
+    //0.00000003282911897883877497 is lowest so far and idk why so exact needed
+    //0.000000000010888904795197664
+    MPMusicPlayerController *iPod = [MPMusicPlayerController iPodMusicPlayer];
+    self.volumeTextField.text = [NSString stringWithFormat:@"%f",iPod.volume];
+    self.volumeSlider.value = iPod.volume;
+    //rounds to 6 zeroes
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)maxButtonTapped {
+    self.volumeSlider.value = 1.0;
+    self.volumeTextField.text = @"1.0";
+    [[MPMusicPlayerController applicationMusicPlayer] setVolume:1.0];
+}
+
+- (IBAction)minSpeakersButtonTapped {
+    //NOTE for speakers, not for the headphones
+    self.volumeSlider.value = 0.00000003282911897883877497;
+    self.volumeTextField.text = [NSString stringWithFormat:@"0.00000003282911897883877497"];
+    [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.00000003282911897883877497];
+}
+- (IBAction)minHeadphonesButtonTapped {
+    self.volumeSlider.value = 0.000000000010888904795197664;
+    self.volumeTextField.text = [NSString stringWithFormat:@"0.000000000010888904795197664"];
+    [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.000000000010888904795197664];
 }
 
 
