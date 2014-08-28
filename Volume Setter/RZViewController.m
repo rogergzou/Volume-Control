@@ -6,12 +6,16 @@
 //  Copyright (c) 2014 Roger Zou. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 #import "RZViewController.h"
 
 @interface RZViewController ()
 
 @property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 @property (weak, nonatomic) IBOutlet UITextField *volumeTextField;
+//@property (weak, nonatomic) IBOutlet UIView *boundsViewVolume;
+
 //@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
@@ -33,6 +37,10 @@
     scroller.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
 
     //self.view = self.scrollView;
+    //MPVolumeView *volumeView = [[MPVolumeView alloc]initWithFrame:self.boundsViewVolume.bounds];
+    //[self.boundsViewVolume addSubview:volumeView];
+    [[AVAudioSession sharedInstance] setActive:YES error:NULL];
+    //0.00000003283 is lowest so far
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,14 +51,16 @@
 
 
 - (IBAction)textChanged:(UITextField *)sender {
-    if ([self isNumeric:sender.text])
+    if ([self isNumeric:sender.text]) {
         self.volumeSlider.value = [sender.text floatValue];
-    else
+        [[MPMusicPlayerController applicationMusicPlayer] setVolume:self.volumeSlider.value];
+    } else
         sender.text = @"";
 }
 
 - (IBAction)sliderChanged:(UISlider *)sender {
     self.volumeTextField.text = [NSString stringWithFormat:@"%f",sender.value];
+    [[MPMusicPlayerController applicationMusicPlayer] setVolume:sender.value];
 }
 
 // http://stackoverflow.com/questions/7153376/detect-if-nsstring-is-a-float-number

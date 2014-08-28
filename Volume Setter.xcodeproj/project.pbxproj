@@ -21,6 +21,8 @@
 		DB5D08E819AD976C0083FF5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D08CA19AD976C0083FF5C /* UIKit.framework */; };
 		DB5D08F019AD976C0083FF5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB5D08EE19AD976C0083FF5C /* InfoPlist.strings */; };
 		DB5D08F219AD976C0083FF5C /* Volume_SetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5D08F119AD976C0083FF5C /* Volume_SetterTests.m */; };
+		DB5D08FC19AEC9810083FF5C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D08FB19AEC9810083FF5C /* MediaPlayer.framework */; };
+		DB5D08FE19AECEB90083FF5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5D08FD19AECEB90083FF5C /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		DB5D08ED19AD976C0083FF5C /* Volume SetterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Volume SetterTests-Info.plist"; sourceTree = "<group>"; };
 		DB5D08EF19AD976C0083FF5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB5D08F119AD976C0083FF5C /* Volume_SetterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Volume_SetterTests.m; sourceTree = "<group>"; };
+		DB5D08FB19AEC9810083FF5C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DB5D08FD19AECEB90083FF5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB5D08FE19AECEB90083FF5C /* AVFoundation.framework in Frameworks */,
+				DB5D08FC19AEC9810083FF5C /* MediaPlayer.framework in Frameworks */,
 				DB5D08C919AD976C0083FF5C /* CoreGraphics.framework in Frameworks */,
 				DB5D08CB19AD976C0083FF5C /* UIKit.framework in Frameworks */,
 				DB5D08C719AD976C0083FF5C /* Foundation.framework in Frameworks */,
@@ -101,6 +107,8 @@
 		DB5D08C519AD976C0083FF5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB5D08FD19AECEB90083FF5C /* AVFoundation.framework */,
+				DB5D08FB19AEC9810083FF5C /* MediaPlayer.framework */,
 				DB5D08C619AD976C0083FF5C /* Foundation.framework */,
 				DB5D08C819AD976C0083FF5C /* CoreGraphics.framework */,
 				DB5D08CA19AD976C0083FF5C /* UIKit.framework */,
